@@ -12,19 +12,20 @@ function App() {
 
   useEffect(() => {
     ReactGA.send({
-      hitType : "pageview",
-      page : window.location.pathname + window.location.search,
-      title : "Home Page"
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: "Home Page"
     });
-  },[])
+  }, [])
 
   const handleClick = () => {
     ReactGA.send({
-      hitType : "event",
-      eventCategory : "Button",
-      eventAction : "Click",
-      eventLabel : "Click Button",
-      eventValue : 10
+      hitType: "event",
+      eventCategory: "Button",
+      eventAction: "Click",
+      title: "Botton Click Counter Event",
+      eventLabel: "Click Button",
+      eventValue: 10
     });
 
     setCount((count) => count + 1);
