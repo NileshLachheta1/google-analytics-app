@@ -18,6 +18,18 @@ function App() {
     });
   },[])
 
+  const handleClick = () => {
+    ReactGA.send({
+      hitType : "event",
+      eventCategory : "Button",
+      eventAction : "Click",
+      eventLabel : "Click Button",
+      eventValue : 10
+    });
+
+    setCount((count) => count + 1);
+  }
+
   return (
     <>
       <div>
@@ -30,10 +42,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => handleClick()}>
           count is {count}
         </button>
         <p>This is a Vite + React app with a counter button. for google analytics implementation</p>
+        <p>Add Click Event to track the click activity</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
