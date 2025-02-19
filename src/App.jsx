@@ -34,8 +34,28 @@ function App() {
       label: "Click Button",
       value: 10
     });
-    
+    console.log("increse counter");
     setCount((count) => count + 1);
+  }
+
+  const handleLikeClick = () => {
+    ReactGA.event({
+      category: "Like Button",
+      action: "Click",
+      label: "Click TO Like",
+      value: 20
+    });
+    console.log("liked");
+  }
+
+  const handleSubScribeClick = () => {
+    ReactGA.event({
+      category: "SubScribe Button",
+      action: "Click",
+      label: "Click TO SubScribe",
+      value: 30
+    });
+    console.log("subscribed")
   }
 
   return (
@@ -53,6 +73,18 @@ function App() {
         <button onClick={() => handleClick()}>
           count is {count}
         </button>
+        <br /><br />
+        <div>
+          <button onClick={() => handleLikeClick()}>
+            Like
+          </button>
+        </div>
+        <br />
+        <div>
+          <button onClick={() => handleSubScribeClick()}>
+            Subscribe
+          </button>
+        </div>
         <p>This is a Vite + React app with a counter button. for google analytics implementation</p>
         <p>Add Click Event to track the click activity</p>
       </div>
