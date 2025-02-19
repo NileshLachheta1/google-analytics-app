@@ -19,15 +19,22 @@ function App() {
   }, [])
 
   const handleClick = () => {
-    ReactGA.send({
-      hitType: "event",
-      eventCategory: "Button",
-      eventAction: "Click",
-      title: "Botton Click Counter Event",
-      eventLabel: "Click Button",
-      eventValue: 10
-    });
+    // ReactGA.send({
+    //   hitType: "event",
+    //   eventCategory: "Button",
+    //   eventAction: "Click",
+    //   title: "Botton Click Counter Event",
+    //   eventLabel: "Click Button",
+    //   eventValue: 10
+    // });
 
+    ReactGA.event({
+      category: "Button",
+      action: "Click",
+      label: "Click Button",
+      value: 10
+    });
+    
     setCount((count) => count + 1);
   }
 
