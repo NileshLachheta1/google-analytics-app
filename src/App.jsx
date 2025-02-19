@@ -41,7 +41,7 @@ function App() {
   const handleLikeClick = () => {
     ReactGA.event({
       category: "Like Button",
-      action: "Click",
+      action: "Liked",
       label: "Click TO Like",
       value: 20
     });
